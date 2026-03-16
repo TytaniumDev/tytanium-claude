@@ -41,8 +41,8 @@ $ARGUMENTS
 
 ### 3. Wait for Reviews
 
-- **You MUST wait at least 2 minutes** before checking for reviews. The Claude and Gemini review agents need time to analyze the PR.
-- First, sleep for 2 minutes: `sleep 120`
+- **You MUST wait at least 1 minute** before checking for reviews. The Claude and Gemini review agents need time to analyze the PR.
+- First, sleep for 1 minute: `sleep 60`
 - Then poll for review comments using `gh pr view <number> --json reviews,comments` and `gh api repos/{owner}/{repo}/pulls/<number>/comments`
 - If no substantive reviews have been posted yet, continue polling every 60 seconds for up to 5 more minutes
 - Once reviews arrive, read ALL review comments carefully — from both Claude and Gemini (and any human reviewers)
