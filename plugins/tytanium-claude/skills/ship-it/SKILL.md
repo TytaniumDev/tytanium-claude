@@ -43,6 +43,7 @@ $ARGUMENTS
 
 - Note: Gemini auto-triggers on PR creation; Claude was triggered by the comment in Step 2.
 - Get the repo's owner/name: `gh repo view --json nameWithOwner --jq '.nameWithOwner'`
+- Substitute the PR number (from Step 1) for `<number>`, and split the `nameWithOwner` output on `/` to get `<owner>` and `<repo>` for all API paths below.
 - Poll up to 20 times (sleep 15 seconds before each check, 5 minutes total):
   - Each cycle starts with `sleep 15`, then checks both APIs for each bot:
     - `gh api repos/<owner>/<repo>/issues/<number>/comments --jq 'any(.[]; .user.login == "claude[bot]")'`
