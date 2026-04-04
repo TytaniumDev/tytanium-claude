@@ -14,19 +14,19 @@ jobs:
 
       - name: Bump patch version
         run: |
-          VERSION=$(jq -r '.version' plugins/tytanium-claude/.claude-plugin/plugin.json)
+          VERSION=$(jq -r '.version' plugins/TytaniumAgentSkills/.claude-plugin/plugin.json)
           MAJOR=$(echo "$VERSION" | cut -d. -f1)
           MINOR=$(echo "$VERSION" | cut -d. -f2)
           PATCH=$(echo "$VERSION" | cut -d. -f3)
           NEW_VERSION="$MAJOR.$MINOR.$((PATCH + 1))"
-          jq --arg v "$NEW_VERSION" '.version = $v' plugins/tytanium-claude/.claude-plugin/plugin.json > tmp.json
-          mv tmp.json plugins/tytanium-claude/.claude-plugin/plugin.json
+          jq --arg v "$NEW_VERSION" '.version = $v' plugins/TytaniumAgentSkills/.claude-plugin/plugin.json > tmp.json
+          mv tmp.json plugins/TytaniumAgentSkills/.claude-plugin/plugin.json
           echo "Bumped version from $VERSION to $NEW_VERSION"
 
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add plugins/tytanium-claude/.claude-plugin/plugin.json
+          git add plugins/TytaniumAgentSkills/.claude-plugin/plugin.json
           git commit -m "chore: bump plugin version"
           git push
