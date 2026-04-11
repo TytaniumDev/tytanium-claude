@@ -49,12 +49,12 @@ fi
 # Discord caps message content at 2000 chars; truncate with a marker if over.
 PAYLOAD="$(python3 -c '
 import json, sys
-title, body = sys.argv[1], sys.argv[2]
+title, body = sys.argv[1], sys.stdin.read()
 content = f"**{title}**\n{body}"
 if len(content) > 1900:
     content = content[:1900] + "\n...(truncated)"
 print(json.dumps({"content": content}))
-' "$TITLE" "$BODY")"
+' "$TITLE" <<< "$BODY")"
 
 TMP_OUT="$(mktemp -t notify-discord.XXXXXX)"
 trap 'rm -f "$TMP_OUT"' EXIT
