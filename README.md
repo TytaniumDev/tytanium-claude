@@ -9,6 +9,7 @@ Personal Claude Code and Gemini CLI plugins for PR workflows, code review, and s
 | **commit-push** | `/commit-push` | Claude / Gemini | Stage all changes, commit, and push to `main` |
 | **ship-it** | `/ship-it [description]` | Claude / Gemini | Create a PR, request reviews, address feedback, and merge |
 | **ship-no-merge** | `/ship-no-merge [description]` | Claude / Gemini | Same as `ship-it` but leaves the PR open for manual merge |
+| **overnight** | `/overnight` | Claude | Long-running autonomous improvement session: parallel critic sub-agents propose fixes, deliberate, and ship as themed PRs (5-hour budget, 20-PR cap) |
 
 ## Setup on a new computer
 
