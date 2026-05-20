@@ -1,0 +1,10 @@
+{
+  "name": "tytanium-agent-skills",
+  "version": "1.0.0",
+  "description": "Port of TytaniumAgentSkills (ship-it, ship-no-merge, review-prs, overnight) to Antigravity.",
+  "author": {
+    "name": "Tyler Holland"
+  },
+  "repository": "https://github.com/TytaniumDev/TytaniumAgentSkills",
+  "license": "MIT"
+}

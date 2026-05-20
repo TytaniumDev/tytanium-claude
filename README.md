@@ -40,7 +40,16 @@ Verify the skills are available:
 gemini skills list
 ```
 
+#### **Antigravity**
+Simply clone this repository and run the setup script:
+```sh
+./setup-antigravity.sh
+```
+This will automatically link the `TytaniumAntigravitySkills` plugin to your global Antigravity installation.
+
 ### Uninstall
 
 **Claude Code:** `claude plugin uninstall TytaniumAgentSkills`
 **Gemini CLI:** `gemini extensions uninstall TytaniumAgentSkills`
+**Antigravity:** `rm ~/.gemini/config/plugins/tytanium-agent-skills`
+
